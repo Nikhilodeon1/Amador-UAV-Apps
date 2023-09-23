@@ -24,7 +24,7 @@ def prep_image(raw_img):
     modified_img = modified_img.reshape(modified_img.shape[0]*modified_img.shape[1], 3)
     return modified_img
 def color_analysis(img):
-    with open ('results\colordetect.out', 'w') as out_file:
+    with open ('colordetect.out', 'w') as out_file:
         clf = KMeans(n_clusters = 5)
         color_labels = clf.fit_predict(img)
         center_colors = clf.cluster_centers_
