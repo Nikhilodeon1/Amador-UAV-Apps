@@ -1,3 +1,5 @@
+#Amador UAVs - Question 1 - Nikhil Tamvada
+
 import numpy as np
 from scipy.spatial import ConvexHull
 import math
