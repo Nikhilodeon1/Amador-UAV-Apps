@@ -14,7 +14,9 @@ with open("input.in", "r") as file:
         xlist = []
         ylist = []
         for elm in ulist:
-            xlist.append(float(maindata[1]) - (((-2.7038*(10**-7))*elm[0])+0.000737717))
-            ylist.append(float(maindata[2]) - (((-6.9855*(10**-8))*elm[1])+0.000139849))
+            #for reference on how i got these equations, go here: https://www.desmos.com/calculator/9gtrrft4ug
+            xlist.append(((((2.703853047*(10**-7))/float(maindata[0]))*elm[0])+((1.00001*(float(maindata[1])))-0.000624082)))
+            ylist.append(((((6.9855*(10**-8))/float(maindata[0]))*elm[1])+((1.00001*(float(maindata[2])))-0.000624082)))
         for elm in range(0, int(maindata[-1])):
-            out_file.write(str(round(xlist[elm], 5)) + " " + str(round(ylist[elm], 5)) + "\n")
+            out_file.write(str(round(xlist[elm], 6)) + " " + str(round(ylist[elm], 6)) + "\n")
+#coords may be slighly offset due to rounding errors
